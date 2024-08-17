@@ -284,5 +284,16 @@ void Translator::WriteElement( const char* pszElemName, double dvalue,
 	}
 }
 
+const char* Translator::TrimString(const char* str, size_t* len) {
+	while (str[0] == ' ') {
+		str++;
+	}
+	(*len) = strlen(str);
+	while (str[(*len) - 1] == ' ') {
+		(*len)--;
+	}
+	return str;
+}
+
 
 }
